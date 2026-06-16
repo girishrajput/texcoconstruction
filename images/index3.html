@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEXCO Construction | Built for Texas. Built to Last.</title>
+    <meta name="description" content="Post Frame Buildings, Metal Buildings, Concrete, Fencing & Site Work in Brazoria County." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        /* ----- Custom Properties ----- */
+        :root {
+            --black: #000000;
+            --red: #FF0000;
+            --light-gray: #F5F7FA;
+            --charcoal: #1F2937;
+            --red-dark: #cc0000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #fff;
+            color: var(--charcoal);
+            overflow-x: hidden;
+        }
+
+        /* ----- Header ----- */
+        .header-transparent {
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .header-solid {
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .header-solid .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .header-solid .nav-link:hover {
+            color: #fff;
+        }
+
+        /* ----- Buttons ----- */
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -8px rgba(255, 0, 0, 0.4);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-dark {
+            background: transparent;
+            color: var(--black);
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 2px solid var(--black);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-outline-dark:hover {
+            background: var(--black);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* ----- Hero with diagonal overlay ----- */
+        .hero-diagonal {
+            position: relative;
+        }
+        .hero-diagonal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ----- Service Cards (new) with image background ----- */
+        .service-card-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+            min-height: 280px;
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem 1.5rem;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .service-card-image .bg-img {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s ease;
+            z-index: 0;
+        }
+        .service-card-image:hover .bg-img {
+            transform: scale(1.06);
+        }
+        .service-card-image .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+            z-index: 1;
+        }
+        .service-card-image .content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+        .service-card-image .content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .service-card-image .content p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            max-width: 90%;
+        }
+        .service-card-image .content .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--red);
+        }
+
+        /* ----- Project Cards (new) with hover overlay ----- */
+        .project-card-hover {
+            border-radius: 1.25rem;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s ease;
+        }
+        .project-card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+        }
+        .project-card-hover .project-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .project-card-hover:hover .project-img {
+            transform: scale(1.05);
+        }
+        .project-card-hover .project-info {
+            padding: 1.25rem;
+            background: #fff;
+        }
+        .project-card-hover .project-tag {
+            display: inline-block;
+            background: rgba(255, 0, 0, 0.08);
+            color: var(--red);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+
+        /* ----- Stats (new) with red underline ----- */
+        .stat-number-underline {
+            font-size: 3.75rem;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+        .stat-number-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40%;
+            height: 4px;
+            background: var(--red);
+            border-radius: 2px;
+        }
+
+        /* ----- Process (new) with numbered circles ----- */
+        .process-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .process-circle .circle {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--red);
+            color: #fff;
+            font-size: 1.75rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 0 6px rgba(255, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        }
+        .process-circle:hover .circle {
+            transform: scale(1.08);
+            box-shadow: 0 0 0 10px rgba(255, 0, 0, 0.08);
+        }
+
+        /* ----- Testimonials (new) with avatar ----- */
+        .testimonial-avatar-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .testimonial-avatar-card:hover {
+            border-color: var(--red);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+        }
+        .testimonial-avatar-card .quote-icon {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 2.5rem;
+            color: rgba(255, 0, 0, 0.08);
+        }
+
+        /* ----- Gallery (new) with zoom and caption ----- */
+        .gallery-zoom {
+            border-radius: 1rem;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .gallery-zoom img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .gallery-zoom:hover img {
+            transform: scale(1.06);
+        }
+        .gallery-zoom .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent);
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        .gallery-zoom:hover .caption {
+            transform: translateY(0);
+        }
+
+        /* ----- CTA Banner with diagonal split ----- */
+        .cta-split {
+            background: var(--red);
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-split::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 60%;
+            height: 200%;
+            background: rgba(0, 0, 0, 0.1);
+            transform: rotate(12deg);
+            pointer-events: none;
+        }
+
+        /* ----- Footer with newsletter ----- */
+        .footer-newsletter input {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            color: #fff;
+            width: 100%;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+        .footer-newsletter input:focus {
+            border-color: var(--red);
+        }
+        .footer-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ----- Back to top ----- */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            background: var(--red);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #backToTop:hover {
+            background: var(--red-dark);
+            transform: translateY(-4px);
+        }
+
+        /* ----- Lightbox (same) ----- */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(16px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 1.25rem;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        /* ----- Mobile Menu ----- */
+        .mobile-menu-new {
+            display: none;
+            background: #000;
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            margin-top: 0.75rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .mobile-menu-new.open {
+            display: block;
+        }
+        .mobile-menu-new a {
+            display: block;
+            padding: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: color 0.2s;
+        }
+        .mobile-menu-new a:hover {
+            color: var(--red);
+        }
+        .mobile-menu-new a:last-child {
+            border-bottom: none;
+        }
+
+        /* ----- Swiper override ----- */
+        .swiper-pagination-bullet {
+            background: rgba(0, 0, 0, 0.2) !important;
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--red) !important;
+        }
+
+        /* ----- Responsive ----- */
+        @media (max-width: 768px) {
+            .stat-number-underline {
+                font-size: 2.5rem;
+            }
+            .hero-title {
+                font-size: 2.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+    LIGHTBOX
+    ============================================================ -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-close" id="lightboxClose">&times;</div>
+        <img id="lightboxImg" src="" alt="Project gallery" />
+    </div>
+
+    <!-- ============================================================
+    BACK TO TOP
+    ============================================================ -->
+    <div id="backToTop" title="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- ============================================================
+    HEADER (minimal with red accent line)
+    ============================================================ -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 header-transparent transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+
+                <!-- Logo with red accent -->
+                <a href="#" class="flex items-center gap-2 text-white font-bold text-2xl tracking-tight">
+                    <span class="text-red-600 text-3xl">◆</span>
+                    <span>TEXCO</span>
+                    <span class="text-red-600 font-light">Construction</span>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#" class="nav-link text-white/80 hover:text-white transition text-sm font-medium">Home</a>
+                    <a href="#services" class="nav-link text-white/80 hover:text-white transition text-sm font-medium">Services</a>
+                    <a href="#projects" class="nav-link text-white/80 hover:text-white transition text-sm font-medium">Projects</a>
+                    <a href="#about" class="nav-link text-white/80 hover:text-white transition text-sm font-medium">About</a>
+                    <a href="#contact" class="nav-link text-white/80 hover:text-white transition text-sm font-medium">Contact</a>
+                    <a href="#contact" class="btn-primary text-sm py-2.5 px-6">
+                        <i class="fa-solid fa-pen-ruler"></i> Free Quote
+                    </a>
+                </nav>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileToggle" class="lg:hidden text-white text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu-new lg:hidden">
+                <a href="#">Home</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="text-red-500 font-semibold">Get Free Quote →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    HERO (Full-screen with diagonal overlay and floating CTA)
+    ============================================================ -->
+    <section id="home" class="hero-diagonal relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://picsum.photos/seed/texasbuild3/1600/900" alt="TEXCO Construction" class="w-full h-full object-cover" loading="eager" />
+        </div>
+        <!-- Diagonal overlay is applied via pseudo-element -->
+
+        <div class="hero-content w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+            <div class="max-w-2xl" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                <span class="inline-block bg-red-600/30 text-red-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm border border-red-600/30">
+                    <i class="fa-solid fa-star mr-2"></i> Trusted in Brazoria County
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight hero-title">
+                    Building Texas With <br />
+                    <span class="text-red-600">Strength &amp; Precision</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-white/80 mt-6 max-w-lg leading-relaxed">
+                    Custom Post Frame Buildings, Red Iron Structures, Concrete, Fencing &amp; Site Work Built To Last.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="#contact" class="btn-primary text-base">
+                        <i class="fa-solid fa-pen-ruler"></i> Request A Quote
+                    </a>
+                    <a href="#projects" class="btn-outline-light text-base">
+                        <i class="fa-solid fa-images"></i> View Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- Floating stats (glass) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mt-16" data-aos="fade-up" data-aos-delay="300">
+                <div class="glass rounded-2xl px-6 py-5 text-center backdrop-blur-sm bg-white/10 border border-white/10">
+                    <div class="text-4xl font-extrabold text-red-500 stat-number-underline" data-count="500">0</div>
+                    <div class="text-white/70 text-sm font-medium mt-2">Projects Completed</div>
+                </div>
+                <div class="glass rounded-2xl px-6 py-5 text-center backdrop-blur-sm bg-white/10 border border-white/10">
+                    <div class="text-4xl font-extrabold text-red-500 stat-number-underline" data-count="15">0</div>
+                    <div class="text-white/70 text-sm font-medium mt-2">Years Experience</div>
+                </div>
+                <div class="glass rounded-2xl px-6 py-5 text-center backdrop-blur-sm bg-white/10 border border-white/10">
+                    <div class="text-4xl font-extrabold text-red-500 stat-number-underline" data-count="100">0</div>
+                    <div class="text-white/70 text-sm font-medium mt-2">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TRUSTED BY (same)
+    ============================================================ -->
+    <section class="py-16 bg-[#F5F7FA] border-b border-gray-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm uppercase tracking-widest text-gray-500 font-semibold mb-8">
+                Trusted By Property Owners Across Texas
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-10 max-w-3xl mx-auto">
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-2">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Agricultural</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-2">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Commercial</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-2">
+                        <i class="fa-solid fa-industry"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Industrial</span>
+                </div>
+                <div class="flex flex-col items-center text-center">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center text-red-600 text-2xl mb-2">
+                        <i class="fa-solid fa-house"></i>
+                    </div>
+                    <span class="text-sm font-semibold text-gray-700">Residential</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES (Image background cards)
+    ============================================================ -->
+    <section id="services" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    What We Do
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    Comprehensive <br class="sm:hidden" />
+                    <span class="text-red-600">Construction Services</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+                    From site preparation to final finishing, we deliver quality workmanship across every phase of your project.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="50">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv1/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-warehouse"></i></span>
+                        <h3>Post Frame Buildings</h3>
+                        <p>Cost-effective, versatile structures for agricultural, commercial, and residential use.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv2/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-building"></i></span>
+                        <h3>Red Iron Buildings</h3>
+                        <p>Maximum strength steel structures for commercial, industrial, and agricultural applications.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="150">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv3/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-weight-hanging"></i></span>
+                        <h3>Concrete</h3>
+                        <p>Foundations, slabs, equipment pads, driveways, and flatwork built for durability.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv4/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-fence"></i></span>
+                        <h3>Fencing</h3>
+                        <p>Ranch, agricultural, pipe, barbed wire, and commercial fencing solutions.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="250">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv5/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-truck"></i></span>
+                        <h3>Site Work &amp; Dirt Work</h3>
+                        <p>Land clearing, building pads, excavation, grading, drainage, and road base.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="service-card-image" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-img" style="background-image: url('https://picsum.photos/seed/serv6/600/400');"></div>
+                    <div class="overlay"></div>
+                    <div class="content">
+                        <span class="icon"><i class="fa-solid fa-pen-ruler"></i></span>
+                        <h3>Custom Construction</h3>
+                        <p>Tailored solutions for unique projects — from horse barns to commercial facilities.</p>
+                        <a href="#contact" class="inline-flex items-center text-white font-semibold text-sm mt-3 hover:text-red-400 transition">
+                            Learn More <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FEATURED PROJECTS (with hover overlay)
+    ============================================================ -->
+    <section id="projects" class="py-20 lg:py-28 bg-[#F5F7FA]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+                <span class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    Our Work
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    Featured <span class="text-red-600">Projects</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4">
+                    Quality construction delivered across Brazoria County and beyond.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1 -->
+                <div class="project-card-hover group" data-aos="fade-up" data-aos-delay="50">
+                    <div class="relative overflow-hidden">
+                        <img src="https://picsum.photos/seed/proj1/600/400" alt="Post frame" class="project-img" />
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Post Frame</span>
+                        <h4 class="text-lg font-bold text-[#000000] mt-2">Equipment Storage</h4>
+                        <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+                            <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Angleton, TX</span>
+                            <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 60×120</span>
+                        </div>
+                        <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+                        data-img="https://picsum.photos/seed/proj1/1200/800">
+                        View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 2 -->
+            <div class="project-card-hover group" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative overflow-hidden">
+                    <img src="https://picsum.photos/seed/proj2/600/400" alt="Red iron" class="project-img" />
+                </div>
+                <div class="project-info">
+                    <span class="project-tag">Red Iron</span>
+                    <h4 class="text-lg font-bold text-[#000000] mt-2">Commercial Warehouse</h4>
+                    <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+                        <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Lake Jackson, TX</span>
+                        <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 80×150</span>
+                    </div>
+                    <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+                    data-img="https://picsum.photos/seed/proj2/1200/800">
+                    View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="project-card-hover group" data-aos="fade-up" data-aos-delay="150">
+            <div class="relative overflow-hidden">
+                <img src="https://picsum.photos/seed/proj3/600/400" alt="Horse barn" class="project-img" />
+            </div>
+            <div class="project-info">
+                <span class="project-tag">Post Frame</span>
+                <h4 class="text-lg font-bold text-[#000000] mt-2">Horse Barn</h4>
+                <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+                    <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Brazoria, TX</span>
+                    <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 40×80</span>
+                </div>
+                <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+                data-img="https://picsum.photos/seed/proj3/1200/800">
+                View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+    </div>
+    <!-- 4 -->
+    <div class="project-card-hover group" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative overflow-hidden">
+            <img src="https://picsum.photos/seed/proj4/600/400" alt="Fencing" class="project-img" />
+        </div>
+        <div class="project-info">
+            <span class="project-tag">Fencing</span>
+            <h4 class="text-lg font-bold text-[#000000] mt-2">Ranch Perimeter</h4>
+            <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+                <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Rosharon, TX</span>
+                <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 2,500 ft</span>
+            </div>
+            <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+            data-img="https://picsum.photos/seed/proj4/1200/800">
+            View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+        </button>
+    </div>
+</div>
+<!-- 5 -->
+<div class="project-card-hover group" data-aos="fade-up" data-aos-delay="250">
+    <div class="relative overflow-hidden">
+        <img src="https://picsum.photos/seed/proj5/600/400" alt="Concrete" class="project-img" />
+    </div>
+    <div class="project-info">
+        <span class="project-tag">Concrete</span>
+        <h4 class="text-lg font-bold text-[#000000] mt-2">Shop Foundation</h4>
+        <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+            <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> Pearland, TX</span>
+            <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 50×80</span>
+        </div>
+        <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+        data-img="https://picsum.photos/seed/proj5/1200/800">
+        View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+    </button>
+</div>
+</div>
+<!-- 6 -->
+<div class="project-card-hover group" data-aos="fade-up" data-aos-delay="300">
+    <div class="relative overflow-hidden">
+        <img src="https://picsum.photos/seed/proj6/600/400" alt="Site work" class="project-img" />
+    </div>
+    <div class="project-info">
+        <span class="project-tag">Site Work</span>
+        <h4 class="text-lg font-bold text-[#000000] mt-2">Land Development</h4>
+        <div class="flex items-center gap-3 text-sm text-gray-500 mt-1">
+            <span><i class="fa-solid fa-location-dot text-red-600 mr-1"></i> West Columbia, TX</span>
+            <span><i class="fa-solid fa-expand text-red-600 mr-1"></i> 15 Acres</span>
+        </div>
+        <button class="mt-3 text-red-600 font-semibold text-sm hover:text-red-700 transition view-project"
+        data-img="https://picsum.photos/seed/proj6/1200/800">
+        View Project <i class="fa-solid fa-arrow-right ml-2"></i>
+    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============================================================
+WHY CHOOSE (with red accented list)
+============================================================ -->
+<section id="about" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <!-- Image -->
+            <div data-aos="fade-right" data-aos-duration="700">
+                <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+                    <img src="https://picsum.photos/seed/team2/800/600" alt="TEXCO team" class="w-full h-[420px] lg:h-[520px] object-cover" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#000000]/20 to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4">
+                        <div class="bg-red-600 rounded-xl px-4 py-2 text-white font-bold text-sm">
+                            <i class="fa-solid fa-star mr-1"></i> 15+ Years
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white font-medium text-sm border border-white/20">
+                            <i class="fa-solid fa-check-circle mr-1"></i> 500+ Projects
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+                <span class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    Why TEXCO
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    Built on Hard Work, <br />
+                    <span class="text-red-600">Quality &amp; Texas Values</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                    We bring local experience, quality craftsmanship, and a customer-first approach to every project.
+                    From agricultural buildings to commercial developments, we deliver solutions built for Texas conditions.
+                </p>
+
+                <div class="grid sm:grid-cols-2 gap-4 mt-8">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">Experienced Team</span><p class="text-sm text-gray-500">Skilled professionals</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">Quality Materials</span><p class="text-sm text-gray-500">Built to last</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">On-Time Delivery</span><p class="text-sm text-gray-500">Reliable scheduling</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">Competitive Pricing</span><p class="text-sm text-gray-500">Value without compromise</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">Safety First</span><p class="text-sm text-gray-500">Job site excellence</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-check-circle text-red-600 text-xl mt-0.5"></i>
+                        <div><span class="font-bold text-[#000000]">Customer Satisfaction</span><p class="text-sm text-gray-500">100% commitment</p></div>
+                    </div>
+                </div>
+
+                <a href="#contact" class="btn-primary mt-8 inline-flex">
+                    <i class="fa-solid fa-phone"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+PROCESS (Circular steps)
+============================================================ -->
+<section class="py-20 lg:py-28 bg-[#F5F7FA]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <span class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                How It Works
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                Our <span class="text-red-600">Process</span>
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <!-- 1 -->
+            <div class="process-circle" data-aos="fade-up" data-aos-delay="50">
+                <div class="circle">1</div>
+                <h4 class="text-xl font-bold text-[#000000]">Consultation</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                    We listen to your goals, assess your property, and develop a clear plan.
+                </p>
+            </div>
+            <!-- 2 -->
+            <div class="process-circle" data-aos="fade-up" data-aos-delay="100">
+                <div class="circle">2</div>
+                <h4 class="text-xl font-bold text-[#000000]">Design &amp; Planning</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                    Custom designs, material selection, and detailed project planning.
+                </p>
+            </div>
+            <!-- 3 -->
+            <div class="process-circle" data-aos="fade-up" data-aos-delay="150">
+                <div class="circle">3</div>
+                <h4 class="text-xl font-bold text-[#000000]">Construction</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                    Professional execution with quality craftsmanship and safety.
+                </p>
+            </div>
+            <!-- 4 -->
+            <div class="process-circle" data-aos="fade-up" data-aos-delay="200">
+                <div class="circle">4</div>
+                <h4 class="text-xl font-bold text-[#000000]">Project Completion</h4>
+                <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                    Final walkthrough, quality assurance, and your complete satisfaction.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+TESTIMONIALS (New with quote icon)
+============================================================ -->
+<section class="py-20 lg:py-28 bg-[#000000] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <img src="https://picsum.photos/seed/testbg/1600/900" class="w-full h-full object-cover" alt="" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+            <span class="inline-block text-red-400 font-semibold text-sm uppercase tracking-wider bg-red-500/10 px-4 py-1.5 rounded-full border border-red-500/20">
+                Testimonials
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mt-4 leading-tight">
+                What Our <span class="text-red-500">Clients Say</span>
+            </h2>
+        </div>
+
+        <div class="swiper testimonial-swiper !pb-12" data-aos="fade-up">
+            <div class="swiper-wrapper">
+                <!-- 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-avatar-card max-w-2xl mx-auto">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="flex items-center gap-1 text-red-500 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#1F2937] text-lg leading-relaxed">
+                            "TEXCO built our new horse barn and did an outstanding job. The team was professional,
+                            communicative, and delivered exactly what we wanted. Highly recommend!"
+                        </p>
+                        <div class="flex items-center gap-4 mt-5">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-lg">
+                                JD
+                            </div>
+                            <div>
+                                <div class="font-semibold text-[#000000]">John D.</div>
+                                <div class="text-gray-500 text-sm">Ranch Owner, Angleton</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-avatar-card max-w-2xl mx-auto">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="flex items-center gap-1 text-red-500 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#1F2937] text-lg leading-relaxed">
+                            "We needed a commercial warehouse built quickly. TEXCO delivered ahead of schedule
+                            and the quality is top-notch. They're our go-to contractor now."
+                        </p>
+                        <div class="flex items-center gap-4 mt-5">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-lg">
+                                ML
+                            </div>
+                            <div>
+                                <div class="font-semibold text-[#000000]">Maria L.</div>
+                                <div class="text-gray-500 text-sm">Business Owner, Lake Jackson</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-avatar-card max-w-2xl mx-auto">
+                        <div class="quote-icon"><i class="fa-solid fa-quote-right"></i></div>
+                        <div class="flex items-center gap-1 text-red-500 mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-[#1F2937] text-lg leading-relaxed">
+                            "From site prep to final concrete, TEXCO handled everything. Their team is experienced,
+                            honest, and they truly care about the quality of their work."
+                        </p>
+                        <div class="flex items-center gap-4 mt-5">
+                            <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 font-bold text-lg">
+                                TR
+                            </div>
+                            <div>
+                                <div class="font-semibold text-[#000000]">Tom R.</div>
+                                <div class="text-gray-500 text-sm">Farmer, Brazoria</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination !bottom-0"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+STATISTICS (Parallax with underline)
+============================================================ -->
+<section class="relative py-20 lg:py-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/seed/statsbg/1600/900" alt="Construction" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#000000]/85"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="50">
+                <div class="stat-number-underline text-white" style="color: #fff;">
+                    <span class="stat-number-new" data-count="500">0</span>
+                </div>
+                <div class="stat-label-new">Projects Completed</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-number-underline text-white" style="color: #fff;">
+                    <span class="stat-number-new" data-count="480">0</span>
+                </div>
+                <div class="stat-label-new">Happy Clients</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="150">
+                <div class="stat-number-underline text-white" style="color: #fff;">
+                    <span class="stat-number-new" data-count="12">0</span>
+                </div>
+                <div class="stat-label-new">Counties Served</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-number-underline text-white" style="color: #fff;">
+                    <span class="stat-number-new" data-count="15">0</span>
+                </div>
+                <div class="stat-label-new">Years Experience</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+GALLERY (with captions)
+============================================================ -->
+<section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+            <span class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                Gallery
+            </span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                Our <span class="text-red-600">Work</span> In Action
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[240px]">
+            <div class="gallery-zoom col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="50">
+                <img src="https://picsum.photos/seed/g1/600/600" alt="Post frame" />
+                <div class="caption">Post Frame Building</div>
+            </div>
+            <div class="gallery-zoom col-span-1" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://picsum.photos/seed/g2/600/400" alt="Red iron" />
+                <div class="caption">Red Iron Warehouse</div>
+            </div>
+            <div class="gallery-zoom col-span-1" data-aos="fade-up" data-aos-delay="150">
+                <img src="https://picsum.photos/seed/g3/600/400" alt="Horse barn" />
+                <div class="caption">Horse Barn</div>
+            </div>
+            <div class="gallery-zoom col-span-1" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://picsum.photos/seed/g4/600/400" alt="Fencing" />
+                <div class="caption">Ranch Fencing</div>
+            </div>
+            <div class="gallery-zoom col-span-1 row-span-2" data-aos="fade-up" data-aos-delay="250">
+                <img src="https://picsum.photos/seed/g5/600/600" alt="Concrete" />
+                <div class="caption">Concrete Foundation</div>
+            </div>
+            <div class="gallery-zoom col-span-1" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://picsum.photos/seed/g6/600/400" alt="Site work" />
+                <div class="caption">Site Preparation</div>
+            </div>
+            <div class="gallery-zoom col-span-1" data-aos="fade-up" data-aos-delay="350">
+                <img src="https://picsum.photos/seed/g7/600/400" alt="Team" />
+                <div class="caption">Construction Team</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+CTA BANNER (Split diagonal)
+============================================================ -->
+<section class="cta-split py-16 lg:py-20 relative overflow-hidden">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight" data-aos="fade-up">
+            Ready To Build Your <br /> <span class="text-[#000000]">Next Project?</span>
+        </h2>
+        <p class="text-white/90 text-lg mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            Let's bring your vision to life. Contact us today for a free estimate.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="200">
+            <a href="#contact" class="bg-[#000000] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#1a1a1a] transition shadow-lg hover:shadow-2xl inline-flex items-center gap-2">
+                <i class="fa-solid fa-pen-ruler"></i> Get Free Estimate
+            </a>
+            <a href="tel:8322245656" class="bg-white text-[#000000] px-8 py-3.5 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-flex items-center gap-2">
+                <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+FOOTER (with newsletter)
+============================================================ -->
+<footer id="contact" class="bg-[#000000] text-white/70 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+            <!-- Company -->
+            <div>
+                <a href="#" class="flex items-center gap-2 text-white font-bold text-2xl tracking-tight mb-4">
+                    <span class="text-red-600 text-3xl">◆</span>
+                    <span>TEXCO</span>
+                    <span class="text-red-600 font-light">Construction</span>
+                </a>
+                <p class="text-sm leading-relaxed max-w-xs">
+                    Building Texas with strength, precision, and quality craftsmanship since 2011.
+                </p>
+                <div class="flex gap-4 mt-4">
+                    <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-red-500 transition">Home</a></li>
+                    <li><a href="#services" class="hover:text-red-500 transition">Services</a></li>
+                    <li><a href="#projects" class="hover:text-red-500 transition">Projects</a></li>
+                    <li><a href="#about" class="hover:text-red-500 transition">About</a></li>
+                    <li><a href="#contact" class="hover:text-red-500 transition">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#services" class="hover:text-red-500 transition">Post Frame Buildings</a></li>
+                    <li><a href="#services" class="hover:text-red-500 transition">Red Iron Buildings</a></li>
+                    <li><a href="#services" class="hover:text-red-500 transition">Concrete</a></li>
+                    <li><a href="#services" class="hover:text-red-500 transition">Fencing</a></li>
+                    <li><a href="#services" class="hover:text-red-500 transition">Site Work</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Newsletter -->
+            <div>
+                <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Get In Touch</h4>
+                <ul class="space-y-3 text-sm">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-phone text-red-500 mt-0.5"></i>
+                        <a href="tel:8322245656" class="hover:text-red-500 transition">(832) 224-5656</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-envelope text-red-500 mt-0.5"></i>
+                        <a href="mailto:joe@texcoconstruction.com" class="hover:text-red-500 transition">joe@texcoconstruction.com</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-red-500 mt-0.5"></i>
+                        <span>Brazoria County, Texas</span>
+                    </li>
+                </ul>
+                <div class="mt-4 footer-newsletter">
+                    <p class="text-sm text-white/50 mb-2">Subscribe for updates</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email address" class="flex-1" />
+                        <button class="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700 transition">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-white/40 gap-4">
+            <p>&copy; 2026 TEXCO Construction. All rights reserved.</p>
+            <p>Built for Texas. Built to Last.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ============================================================
+SCRIPTS
+============================================================ -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    // AOS
+    AOS.init({ duration: 700, once: true, offset: 60 });
+
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            header.classList.remove('header-transparent');
+            header.classList.add('header-solid');
+        } else {
+            header.classList.remove('header-solid');
+            header.classList.add('header-transparent');
+        }
+    });
+
+    // Mobile menu
+    const toggleBtn = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+    toggleBtn.addEventListener('click', () => {
+        menuOpen = !menuOpen;
+        mobileMenu.classList.toggle('open', menuOpen);
+        toggleBtn.innerHTML = menuOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menuOpen = false;
+            mobileMenu.classList.remove('open');
+            toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+        });
+    });
+
+    // Counters (new)
+    function animateCounters() {
+        document.querySelectorAll('.stat-number-new[data-count]').forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'), 10);
+            const duration = 2000;
+            const startTime = performance.now();
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(eased * target);
+                counter.textContent = current + (target > 100 ? '+' : '%');
+                if (progress < 1) requestAnimationFrame(update);
+                else counter.textContent = target + (target > 100 ? '+' : '%');
+            }
+            requestAnimationFrame(update);
+        });
+    }
+    const statsSection = document.querySelector('.stat-number-new')?.closest('section');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries.some(e => e.isIntersecting)) {
+                animateCounters();
+                observer.disconnect();
+            }
+        }, { threshold: 0.3 });
+        observer.observe(statsSection);
+    }
+
+    // Swiper testimonials
+    new Swiper('.testimonial-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: { delay: 5000, disableOnInteraction: false },
+        pagination: { el: '.swiper-pagination', clickable: true },
+        breakpoints: { 768: { slidesPerView: 2 } }
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+    document.querySelectorAll('.gallery-zoom, .view-project').forEach(el => {
+        el.addEventListener('click', function(e) {
+            let imgSrc;
+            if (this.classList.contains('view-project')) {
+                imgSrc = this.getAttribute('data-img');
+            } else {
+                const img = this.querySelector('img');
+                if (img) imgSrc = img.src;
+            }
+            if (imgSrc) {
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    });
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+    // Back to top
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        });
+    });
+
+    console.log('TEXCO Construction — Premium Design v3');
+</script>
+
+</body>
+</html>

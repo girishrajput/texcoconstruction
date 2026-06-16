@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEXCO Construction | Brazoria County Construction Services</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* PREMIUM DARK HERO BANNER */
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.85) 0%, rgba(15, 23, 42, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphic Style for the Dark Header */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Smooth Scroll-Driven Reveal Animations */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+
+        .reveal-element.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 selection:bg-orange-500 selection:text-white">
+
+    <!-- Header Navigation -->
+    <header id="navbar"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 border-b border-transparent py-2">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between transition-all duration-500" id="navbar-container">
+
+                <!-- LOGO -->
+                <a href="#" class="group flex items-center gap-3">
+                    <img src="logo.png" class="h-20 w-auto" alt="TEXCO Construction">
+                </a>
+
+                <!-- MENU -->
+                <nav class="hidden lg:flex items-center gap-1.5 glass-panel rounded-full px-2 py-1.5">
+                    <a href="#"
+                        class="px-5 py-2 rounded-full text-sm font-medium text-white hover:text-orange-400 transition-colors duration-200">Home</a>
+                    <a href="#about"
+                        class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors duration-200">About</a>
+                    <a href="#services"
+                        class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors duration-200">Services</a>
+                    <a href="#features"
+                        class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors duration-200">Why
+                        Us</a>
+                    <a href="#regions"
+                        class="px-5 py-2 rounded-full text-sm font-medium text-slate-300 hover:text-orange-400 transition-colors duration-200">Areas
+                        Served</a>
+                </nav>
+
+                <!-- CTA -->
+                <a href="#contact"
+                    class="relative group inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-orange-600 to-amber-600 font-bold text-sm text-white shadow-lg shadow-orange-600/20 hover:shadow-orange-600/40 transition-all duration-300 hover:scale-[1.03]">
+                    <span>Get Free Quote</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-0 w-96 h-96 bg-amber-600/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 pt-32 pb-20">
+            <div class="max-w-4xl">
+                <!-- BADGE -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/10 text-orange-400 text-xs font-bold tracking-widest uppercase mb-8 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></span>
+                    Brazoria County Construction Experts
+                </div>
+
+                <!-- HEADING -->
+                <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tight text-white leading-[1.05]">
+                    Post Frame <br class="hidden md:inline">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400 block mt-1">
+                        Metal Buildings
+                    </span>
+                    Concrete & Site Work
+                </h1>
+
+                <!-- SUBTITLE -->
+                <h2 class="text-xl md:text-2xl font-semibold text-slate-300 mt-6 tracking-wide">
+                    Built For Texas. Built To Last.
+                </h2>
+
+                <!-- TEXT -->
+                <p class="mt-6 text-base md:text-lg text-slate-400 leading-relaxed max-w-2xl">
+                    TEXCO Construction helps property owners, ranchers, farmers, and commercial entities bring complex
+                    infrastructure assets to life with rugged, dependable, precision engineering.
+                </p>
+
+                <!-- CTA BUTTONS -->
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#services"
+                        class="bg-white hover:bg-slate-100 text-slate-950 px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 shadow-xl">
+                        Explore Services
+                    </a>
+                    <a href="#contact"
+                        class="border border-slate-700 hover:border-slate-500 glass-panel px-8 py-4 rounded-full font-bold transition-all duration-300 hover:scale-105 text-white">
+                        Get Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-xs font-semibold text-slate-500 tracking-widest uppercase">
+            <span>Scroll</span>
+            <div class="w-5 h-9 border-2 border-slate-700 rounded-full flex justify-center p-1">
+                <div class="w-1.5 h-2 bg-orange-500 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================================================================
+         ALTERNATELY STRUCTURED INTERIOR DESIGN SYSTEM
+         ========================================================================= -->
+
+
+    <!-- Section 1: ABOUT (Pure White Background Layout) -->
+    <section id="about" class="py-32 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+
+                <div class="lg:col-span-7 reveal-element">
+                    <span class="text-orange-600 font-bold text-xs tracking-widest uppercase block mb-3">Company
+                        Blueprint</span>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 mb-6 uppercase">
+                        Construction Solutions Designed for Rugged Texas Conditions
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-6 text-lg">
+                        Whether you are planning an unyielding post-frame asset, industrial red iron facilities,
+                        heavy-grade structural concrete slabs, robust ranch fencing, or fastidious civil land
+                        development work, TEXCO Construction manages design execution to delivery.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        We balance structural engineering with programmatic functional layouts to optimize capital value
+                        across multi-generational operational lifespans.
+                    </p>
+                </div>
+
+                <!-- Stats Blocks (Subtle Cool-Gray Fill to contrast over pure white section) -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal-element">
+                    <div
+                        class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:border-orange-500/30">
+                        <div class="text-4xl font-black text-orange-600">100%</div>
+                        <div
+                            class="mt-2 text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-slate-700 transition-colors">
+                            Client Focused</div>
+                    </div>
+                    <div
+                        class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:border-orange-500/30">
+                        <div class="text-4xl font-black text-orange-600">5+</div>
+                        <div
+                            class="mt-2 text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-slate-700 transition-colors">
+                            Core Specialties</div>
+                    </div>
+                    <div
+                        class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:border-orange-500/30">
+                        <div class="text-4xl font-black text-orange-600">12+</div>
+                        <div
+                            class="mt-2 text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-slate-700 transition-colors">
+                            Regions Active</div>
+                    </div>
+                    <div
+                        class="bg-slate-50 border border-slate-200/80 rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300 group hover:border-orange-500/30">
+                        <div class="text-4xl font-black text-orange-600">Texas</div>
+                        <div
+                            class="mt-2 text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-slate-700 transition-colors">
+                            Built Tough</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: SERVICES (Light Subtle Gray Background Layout) -->
+    <section id="services" class="py-32 bg-slate-50 border-y border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Section Header -->
+            <div class="text-center mb-24 reveal-element">
+                <span class="text-orange-600 font-bold text-xs tracking-widest uppercase">Our Capabilities</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase mt-3 tracking-tight">Core
+                    Construction Services</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-lg">
+                    Turnkey execution strategies engineered for private ranches, industrial parks, and agricultural
+                    spaces.
+                </p>
+            </div>
+
+            <!-- Service Blocks (Pure White Cards to stand out over the light gray section fill) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- SERVICE 1 -->
+                <div
+                    class="reveal-element group bg-white border border-slate-200 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-600/5">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-8 text-orange-600 font-bold text-xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+                        01</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">
+                        Post Frame Buildings</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Agricultural Facilities</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Heavy Equipment Storage</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Custom Outbuildings &amp; Shops
+                        </li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Equine Barns &amp; Stable Blocks
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- SERVICE 2 -->
+                <div
+                    class="reveal-element group bg-white border border-slate-200 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-600/5">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-8 text-orange-600 font-bold text-xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+                        02</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">Red
+                        Iron Buildings</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Commercial Developments</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Logistics Warehouses</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Industrial Metal Shells</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Structural Steel Erection</li>
+                    </ul>
+                </div>
+
+                <!-- SERVICE 3 -->
+                <div
+                    class="reveal-element group bg-white border border-slate-200 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-600/5">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-8 text-orange-600 font-bold text-xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+                        03</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">
+                        High-Grade Fencing</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Ranch Boundary Perimeter</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Custom Steel Pipe Fencing</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>High-Tensile Wire Enclosures</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Industrial Security Systems</li>
+                    </ul>
+                </div>
+
+                <!-- SERVICE 4 -->
+                <div
+                    class="reveal-element group bg-white border border-slate-200 rounded-3xl p-8 transition-all duration-500 hover:-translate-y-2 hover:border-orange-500/40 hover:shadow-xl hover:shadow-orange-600/5">
+                    <div
+                        class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-8 text-orange-600 font-bold text-xl group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+                        04</div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-orange-600 transition-colors">
+                        Concrete &amp; Site Work</h3>
+                    <ul class="space-y-3 text-slate-600 text-sm">
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Engineered Slab Foundations</li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Site Clearing &amp; Excavation
+                        </li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Civil Grading &amp; Drainage Work
+                        </li>
+                        <li class="flex items-center gap-2.5"><span
+                                class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>Retention Systems Logistics</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: WHY US (Pure White Background Layout) -->
+    <section id="features" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 reveal-element">
+                <span class="text-orange-600 font-bold text-xs tracking-widest uppercase">Value Proposition</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase mt-3">Why Partner With TEXCO?</h2>
+            </div>
+
+            <!-- Proposition Cards (Light gray subtle cards layout) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div
+                    class="reveal-element bg-slate-50 border border-slate-200 rounded-3xl p-8 border-t-4 border-t-orange-600 shadow-sm">
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Local Knowledge</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Deep domain knowledge handling the distinct soil
+                        mechanics and building codes native to Brazoria County.</p>
+                </div>
+                <div
+                    class="reveal-element bg-slate-50 border border-slate-200 rounded-3xl p-8 border-t-4 border-t-orange-600 shadow-sm">
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Premium Materials</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Structural components specified exclusively for
+                        high structural load capacities and extreme Gulf Coast patterns.</p>
+                </div>
+                <div
+                    class="reveal-element bg-slate-50 border border-slate-200 rounded-3xl p-8 border-t-4 border-t-orange-600 shadow-sm">
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Unified Supply Chain</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Civil site prep, structural concrete pours, and
+                        structural building mechanics under one absolute prime vendor.</p>
+                </div>
+                <div
+                    class="reveal-element bg-slate-50 border border-slate-200 rounded-3xl p-8 border-t-4 border-t-orange-600 shadow-sm">
+                    <h3 class="font-bold text-xl text-slate-900 mb-3">Transparent Delivery</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Staging processes synchronized with robust
+                        milestones and accessible programmatic communication tracks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: SERVICE AREAS (Light Subtle Gray Background Layout) -->
+    <section id="regions" class="py-32 bg-slate-50 border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="text-center mb-20 reveal-element">
+                <span class="text-orange-600 font-bold text-xs tracking-widest uppercase">Regional Availability</span>
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 uppercase mt-3">Serving Brazoria County &amp;
+                    Gulf Coast Communities</h2>
+                <p class="text-slate-600 mt-4 max-w-2xl mx-auto text-base">
+                    Deploying specialized construction hardware configurations across our target municipal footprints.
+                </p>
+            </div>
+
+            <!-- Badges (Pure Clean White to contrast nicely over light gray backdrop) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Angleton</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Lake Jackson</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Clute</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Freeport</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Brazoria</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Alvin</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Danbury</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Pearland</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Rosharon</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    West Columbia</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Richwood</div>
+                <div
+                    class="reveal-element bg-white border border-slate-200/80 rounded-2xl py-5 px-6 text-center text-slate-700 font-bold border-b-2 border-b-transparent hover:border-b-orange-600 hover:text-slate-900 hover:shadow-md transition-all duration-300">
+                    Sweeny</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: CALL TO ACTION (Pure White Background Layout) -->
+    <section id="contact" class="py-32 relative bg-white overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/5 rounded-full blur-[140px] pointer-events-none">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tight text-slate-900">Ready to Engineer
+                Your Project?</h2>
+            <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
+                Connect directly with our estimating division to parse land configurations, operational parameters,
+                structural profiles, and delivery timelines.
+            </p>
+            <a href="#"
+                class="inline-flex items-center justify-center bg-slate-900 hover:bg-slate-800 text-white font-black px-10 py-5 rounded-full text-lg tracking-wide transition-all duration-300 hover:scale-105 shadow-xl shadow-slate-900/10">
+                Request an Itemized Free Estimate
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Area (Premium Dark Anchor Section) -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <a href="#" class="group flex items-center gap-3">
+                    <img src="logo.png" class="h-20 w-auto" alt="TEXCO Construction">
+                </a>
+            </div>
+            <p class="text-center md:text-right text-slate-400">
+                &copy; 2026 TEXCO Construction. All structural engineering tracks reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button Component -->
+    <button id="scrollTopBtn" aria-label="Scroll back up"
+        class="fixed bottom-8 right-8 z-50 bg-gradient-to-br from-orange-600 to-amber-600 text-white p-3.5 rounded-xl shadow-xl opacity-0 translate-y-6 pointer-events-none transition-all duration-500 hover:scale-110 active:scale-95 border border-orange-500/30 group">
+        <svg xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 group-hover:-translate-y-0.5 transition-transform duration-300" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Unified UI Control Architecture Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const navbarContainer = document.getElementById('navbar-container');
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            const revealElements = document.querySelectorAll('.reveal-element');
+
+            // 1. Unified Scroll Behavior Controller
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+
+                // Navbar Visual Morphing
+                if (scrollY > 60) {
+                    navbar.classList.add('bg-slate-950', 'border-slate-900', 'shadow-2xl');
+                    navbarContainer.classList.remove('py-4');
+                    navbarContainer.classList.add('py-0');
+                } else {
+                    navbar.classList.remove('bg-slate-950', 'border-slate-900', 'shadow-2xl');
+                    navbarContainer.classList.remove('py-0');
+                    navbarContainer.classList.add('py-4');
+                }
+
+                // Scroll-To-Top Button Activation Mechanics
+                if (scrollY > 400) {
+                    scrollTopBtn.classList.remove('opacity-0', 'translate-y-6', 'pointer-events-none');
+                    scrollTopBtn.classList.add('opacity-100', 'translate-y-0');
+                } else {
+                    scrollTopBtn.classList.remove('opacity-100', 'translate-y-0');
+                    scrollTopBtn.classList.add('opacity-0', 'translate-y-6', 'pointer-events-none');
+                }
+            });
+
+            // 2. Click Handler for Back-To-Top Mechanics
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // 3. High-Performance Intersection Observer for Reveal Elements
+            const elementObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        elementObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.12,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            revealElements.forEach(element => elementObserver.observe(element));
+        });
+    </script>
+
+</body>
+
+</html>
