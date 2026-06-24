@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About TEXCO Construction | Built on Hard Work & Texas Values</title>
+    <meta name="description"
+        content="Learn about TEXCO Construction — your full-service construction partner serving Brazoria County with post frame buildings, red iron structures, fencing, concrete, and site work." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --navy: #000000;
+            --red: #FF0000;
+            --gray-light: #F5F7FA;
+            --charcoal: #1F2937;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #fff;
+            color: var(--charcoal);
+        }
+
+        /* ---------- HEADER ---------- */
+        .header-transparent {
+            background: transparent;
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .header-solid {
+            background: var(--navy);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ---------- BUTTONS ---------- */
+        .btn-primary {
+            background: var(--red);
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px -8px rgba(255, 0, 0, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.35);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.10);
+            border-color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ---------- HERO OVERLAY ---------- */
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.75);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 100%);
+        }
+
+        /* ---------- MOBILE MENU ---------- */
+        .mobile-menu {
+            display: none;
+            background: var(--navy);
+            padding: 1.5rem;
+            border-radius: 1.25rem;
+            margin-top: 0.75rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.75rem 0;
+            color: rgba(255, 255, 255, 0.80);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--red);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Dropdown on desktop */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            min-width: 220px;
+            padding: 0.75rem 0;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 60;
+        }
+
+        .dropdown-group:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1.5rem;
+            color: rgba(255, 255, 255, 0.80);
+            font-size: 0.875rem;
+            transition: color 0.2s, background 0.2s;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--red);
+            background: rgba(255, 0, 0, 0.05);
+        }
+
+        /* ---------- BREADCRUMB ---------- */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.60);
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.70);
+            transition: color 0.2s;
+        }
+
+        .breadcrumb a:hover {
+            color: #fff;
+        }
+
+        .breadcrumb .current {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        /* ---------- SERVICE PILLS (same as before) ---------- */
+        .service-pill {
+            background: rgba(255, 0, 0, 0.06);
+            border: 1px solid rgba(255, 0, 0, 0.10);
+            border-radius: 9999px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-pill:hover {
+            background: var(--red);
+            color: #fff;
+            border-color: var(--red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -8px rgba(255, 0, 0, 0.35);
+        }
+
+        .service-pill i {
+            color: var(--red);
+            transition: color 0.3s ease;
+        }
+
+        .service-pill:hover i {
+            color: #fff;
+        }
+
+        /* ---------- VALUE CARDS ---------- */
+        .value-card {
+            background: #fff;
+            border-radius: 1.25rem;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--red);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .value-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(255, 0, 0, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--red);
+            font-size: 1.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--red);
+            color: #fff;
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        /* ---------- STATS ---------- */
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--red);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.80);
+            margin-top: 0.25rem;
+        }
+
+        /* ---------- TIMELINE ---------- */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 2.5rem;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0.5rem;
+            width: 2px;
+            height: calc(100% - 0.5rem);
+            background: rgba(255, 0, 0, 0.20);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            width: 2rem;
+            height: 2rem;
+            background: var(--red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.75rem;
+            box-shadow: 0 0 0 6px rgba(255, 0, 0, 0.15);
+            z-index: 2;
+        }
+
+        /* ---------- REGION BADGES ---------- */
+        .region-badge {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 9999px;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--charcoal);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .region-badge:hover {
+            background: var(--red);
+            color: #fff;
+            border-color: var(--red);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px -8px rgba(255, 0, 0, 0.35);
+        }
+
+        .region-badge i {
+            color: var(--red);
+            transition: color 0.3s ease;
+        }
+
+        .region-badge:hover i {
+            color: #fff;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .hero-title {
+                font-size: 2.25rem !important;
+            }
+        }
+
+        /* ---------- INNER PAGE HERO (shorter) ---------- */
+        .inner-hero {
+            min-height: 40vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============================================================
+    STICKY HEADER
+    ============================================================ -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 header-transparent transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 text-white font-bold text-3xl tracking-tight">
+                    <img src="images/logo.png" style="height:70px; width:auto" alt="TEXCO Construction logo" />
+                </a>
+
+                <!-- Desktop Nav (updated structure) -->
+                <nav class="hidden lg:flex items-center gap-6 text-white/80 font-medium text-sm">
+                    <a href="index.html" class="hover:text-red-500 transition">Home</a>
+                    <a href="about.html" class="text-red-500 font-semibold transition">About Us</a>
+
+                    <!-- Services Dropdown -->
+                    <div class="relative dropdown-group">
+                        <a href="#" class="hover:text-red-500 transition flex items-center gap-1">
+                            Services <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="services/post-frame.html">Post-Frame Buildings</a>
+                            <a href="services/red-iron.html">Red Iron Buildings</a>
+                            <a href="services/fencing.html">Fencing Services</a>
+                            <a href="services/concrete.html">Concrete Services</a>
+                            <a href="services/site-work.html">Site Work &amp; Dirt Work</a>
+                        </div>
+                    </div>
+
+                    <a href="service-areas.html" class="hover:text-red-500 transition">Service Areas</a>
+                    <a href="gallery.html" class="hover:text-red-500 transition">Project Gallery</a>
+                    <a href="contact.html" class="hover:text-red-500 transition">Contact</a>
+                    <a href="contact.html" class="btn-primary text-sm py-2.5 px-6">
+                        <i class="fa-solid fa-pen-ruler"></i> Get Free Quote
+                    </a>
+                </nav>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileToggle" class="lg:hidden text-white text-3xl focus:outline-none"
+                    aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+            <!-- Mobile Menu (updated) -->
+            <div id="mobileMenu" class="mobile-menu lg:hidden">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="text-red-500 font-semibold">About Us</a>
+                <!-- Services sub-list (simple) -->
+                <a href="services/post-frame.html">— Post-Frame Buildings</a>
+                <a href="services/red-iron.html">— Red Iron Buildings</a>
+                <a href="services/fencing.html">— Fencing Services</a>
+                <a href="services/concrete.html">— Concrete Services</a>
+                <a href="services/site-work.html">— Site Work &amp; Dirt Work</a>
+                <a href="service-areas.html">Service Areas</a>
+                <a href="gallery.html">Project Gallery</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html" class="text-red-500 font-semibold">Get Free Quote →</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+    INNER HERO (shorter, with breadcrumb)
+    ============================================================ -->
+    <section class="relative inner-hero flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/banner.jpg" alt="TEXCO Construction team" class="w-full h-full object-cover" loading="eager" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+            <div class="max-w-3xl" data-aos="fade-up" data-aos-duration="800">
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb mb-6" aria-label="Breadcrumb">
+                    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                    <span class="current">About Us</span>
+                </nav>
+
+                <span
+                    class="inline-block bg-red-600/20 text-red-400 text-sm font-semibold px-4 py-1.5 rounded-full mb-4 backdrop-blur-sm border border-red-600/20">
+                    <i class="fa-solid fa-star mr-2"></i> About TEXCO Construction
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight hero-title">
+                    Built on Hard Work, <br />
+                    <span class="text-red-600">Quality &amp; Texas Values</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-white/80 mt-4 max-w-2xl leading-relaxed">
+                    Proudly serving property owners, ranchers, farmers, and businesses throughout Brazoria County with
+                    dependable construction services.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    OUR STORY (same content, but kept)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="700">
+                    <span
+                        class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                        Our Story
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                        A Full-Service <br /><span class="text-red-600">Construction Partner</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        At TEXCO Construction, we believe every project starts with a commitment to quality, integrity,
+                        and doing the job right. We proudly serve property owners, ranchers, farmers, and businesses
+                        throughout Brazoria County and the surrounding areas with dependable construction services
+                        designed to meet the needs of Texas landowners.
+                    </p>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        From custom post-frame buildings and red iron buildings to fencing, concrete work, and site
+                        preparation, our team is dedicated to delivering durable solutions that provide lasting value.
+                        Whether you're developing agricultural property, improving a ranch, expanding a business, or
+                        building a new structure from the ground up, TEXCO Construction has the experience and
+                        capabilities to help bring your vision to life.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-red-600"></i>
+                            <span class="text-sm font-medium text-gray-700">15+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-red-600"></i>
+                            <span class="text-sm font-medium text-gray-700">500+ Projects Completed</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check-circle text-red-600"></i>
+                            <span class="text-sm font-medium text-gray-700">100% Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+                        <img src="images/9.jpg" alt="TEXCO Construction building a post frame structure"
+                            class="w-full h-[420px] lg:h-[500px] object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#000000]/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4">
+                            <div class="bg-red-600 rounded-xl px-4 py-2 text-white font-bold text-sm">
+                                <i class="fa-solid fa-star mr-1"></i> Built to Last
+                            </div>
+                            <div
+                                class="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white font-medium text-sm border border-white/20">
+                                <i class="fa-solid fa-check-circle mr-1"></i> Texas Proud
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVICES PILLS (same)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-[#F5F7FA]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+                <span
+                    class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    What We Do
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    Comprehensive <span class="text-red-600">Construction Services</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4">
+                    Construction projects often require multiple phases and multiple contractors. At TEXCO Construction,
+                    we simplify the process by offering a wide range of services under one roof.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="50">
+                <span class="service-pill"><i class="fa-solid fa-warehouse"></i> Post Frame Buildings</span>
+                <span class="service-pill"><i class="fa-solid fa-building"></i> Red Iron Buildings</span>
+                <span class="service-pill"><i class="fa-solid fa-tractor"></i> Agricultural Buildings</span>
+                <span class="service-pill"><i class="fa-solid fa-store"></i> Commercial Buildings</span>
+                <span class="service-pill"><i class="fa-brands fa-qq"></i> Fencing</span>
+                <span class="service-pill"><i class="fa-solid fa-weight-hanging"></i> Concrete Services</span>
+                <span class="service-pill"><i class="fa-solid fa-truck"></i> Site Work</span>
+                <span class="service-pill"><i class="fa-solid fa-earth-americas"></i> Dirt Work</span>
+                <span class="service-pill"><i class="fa-solid fa-tree"></i> Land Clearing</span>
+                <span class="service-pill"><i class="fa-solid fa-layer-group"></i> Building Pads</span>
+                <span class="service-pill"><i class="fa-solid fa-digging"></i> Excavation</span>
+                <span class="service-pill"><i class="fa-solid fa-sliders"></i> Grading</span>
+            </div>
+
+            <div class="mt-10 text-center" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-gray-600 text-base max-w-2xl mx-auto">
+                    By providing comprehensive construction services, we help streamline projects, improve communication,
+                    and maintain quality from start to finish.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    VALUES (same)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span
+                    class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    Our Foundation
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    What Drives <span class="text-red-600">TEXCO Construction</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4">
+                    Built on principles that guide every project we undertake.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="50">
+                    <div class="value-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="text-xl font-bold text-[#000000] mt-5">Integrity</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                        We do what we say we'll do. Honest communication and transparent dealings with every client.
+                    </p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3 class="text-xl font-bold text-[#000000] mt-5">Quality</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                        Every project is built with precision and care, using quality materials and proven techniques.
+                    </p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="value-icon"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="text-xl font-bold text-[#000000] mt-5">Service</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                        We put our customers first, listening to your needs and delivering solutions that work for you.
+                    </p>
+                </div>
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon"><i class="fa-solid fa-flag-usa"></i></div>
+                    <h3 class="text-xl font-bold text-[#000000] mt-5">Texas Pride</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mt-2">
+                        We're proud to serve our community and build structures that stand up to Texas conditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SERVING BRAZORIA COUNTY (same)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-[#F5F7FA]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="700">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+                        <img src="images/13.jpg" alt="Brazoria County property with fencing and construction"
+                            class="w-full h-[380px] lg:h-[440px] object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#000000]/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <div class="bg-black/50 backdrop-blur-sm rounded-xl px-5 py-3 text-white font-bold text-sm inline-block">
+                                <i class="fa-solid fa-location-dot text-red-500 mr-2"></i> Brazoria County, TX
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+                    <span
+                        class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                        Local Expertise
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-4 leading-tight">
+                        Serving Property Owners Across <br /><span class="text-red-600">Brazoria County</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        We understand the unique needs of property owners in Southeast Texas. Whether it's a ranch
+                        outside of Angleton, a farm near Brazoria, a commercial property in Pearland, or acreage in
+                        West Columbia, every project presents its own challenges and opportunities.
+                    </p>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        Our team works closely with clients to understand their goals and develop practical solutions
+                        that fit their property, budget, and long-term plans. We take pride in helping our customers
+                        improve and develop their land with structures and improvements built to withstand the demands
+                        of Texas weather and everyday use.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mt-6">
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Angleton</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Lake Jackson</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Clute</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Freeport</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Brazoria</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Alvin</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Pearland</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> Rosharon</span>
+                        <span class="region-badge"><i class="fa-solid fa-check-circle"></i> West Columbia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    AGRICULTURAL & COMMERCIAL (same)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="700">
+                    <span
+                        class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                        Built for Texas
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-[#000000] mt-4 leading-tight">
+                        Agricultural, Ranch &amp; <br /><span class="text-red-600">Commercial Applications</span>
+                    </h2>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        Many of our projects serve the agricultural and ranching communities that are a vital part of
+                        Brazoria County. We understand that buildings, fencing, and site improvements are investments
+                        that must perform for years to come.
+                    </p>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        From equipment storage buildings and horse barns to ranch fencing and building pad preparation,
+                        we focus on delivering solutions that are functional, durable, and purpose-built.
+                    </p>
+                    <p class="text-gray-600 text-lg mt-4 leading-relaxed">
+                        We also work with commercial clients who need dependable construction services for warehouses,
+                        shop buildings, storage facilities, and property improvements.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <div class="flex items-center gap-3 bg-red-50 rounded-xl px-5 py-3">
+                            <i class="fa-solid fa-tractor text-red-600 text-xl"></i>
+                            <div>
+                                <div class="font-bold text-[#000000] text-sm">Agricultural</div>
+                                <div class="text-xs text-gray-500">Barns, equipment storage, fencing</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-red-50 rounded-xl px-5 py-3">
+                            <i class="fa-solid fa-warehouse text-red-600 text-xl"></i>
+                            <div>
+                                <div class="font-bold text-[#000000] text-sm">Commercial</div>
+                                <div class="text-xs text-gray-500">Warehouses, shops, storage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-duration="700" data-aos-delay="100">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl relative">
+                        <img src="images/1.jpg" alt="Agricultural building and fencing project by TEXCO"
+                            class="w-full h-[380px] lg:h-[440px] object-cover" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#000000]/30 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 flex items-center gap-4">
+                            <div class="bg-red-600 rounded-xl px-4 py-2 text-white font-bold text-sm">
+                                <i class="fa-solid fa-star mr-1"></i> Purpose-Built
+                            </div>
+                            <div
+                                class="bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-white font-medium text-sm border border-white/20">
+                                <i class="fa-solid fa-check-circle mr-1"></i> Durable &amp; Reliable
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    STATISTICS (same)
+    ============================================================ -->
+    <section class="relative py-20 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="images/3.jpg" alt="TEXCO Construction project site" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#000000]/85"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="50">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="450">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="150">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Counties Served</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    PROCESS (same)
+    ============================================================ -->
+    <section class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span
+                    class="inline-block text-red-600 font-semibold text-sm uppercase tracking-wider bg-red-50 px-4 py-1.5 rounded-full">
+                    How We Work
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#000000] mt-4 leading-tight">
+                    Our Approach to <span class="text-red-600">Every Project</span>
+                </h2>
+                <p class="text-gray-600 text-lg mt-4">
+                    A streamlined process that ensures quality, communication, and results.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="50">
+                    <div class="timeline-dot">1</div>
+                    <h4 class="text-xl font-bold text-[#000000]">Consultation</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                        We start by listening to your goals, understanding your property, and discussing your vision.
+                    </p>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-dot">2</div>
+                    <h4 class="text-xl font-bold text-[#000000]">Planning &amp; Design</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                        We develop a practical plan that fits your budget, timeline, and property needs.
+                    </p>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="timeline-dot">3</div>
+                    <h4 class="text-xl font-bold text-[#000000]">Construction</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                        Our experienced team executes the work with precision, quality, and clear communication.
+                    </p>
+                </div>
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-dot">4</div>
+                    <h4 class="text-xl font-bold text-[#000000]">Completion &amp; Follow-Up</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mt-1">
+                        We ensure every detail meets your expectations and stand behind our work long after the project
+                        is done.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CTA BANNER (same)
+    ============================================================ -->
+    <section class="py-16 lg:py-20 bg-red-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="images/12.jpg" class="w-full h-full object-cover" alt="" />
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight" data-aos="fade-up">
+                Ready To Build Your <br /> <span class="text-[#000000]">Next Project?</span>
+            </h2>
+            <p class="text-white/90 text-lg mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Let's bring your vision to life. Contact us today for a free estimate.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mt-8" data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html"
+                    class="bg-[#000000] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#1a1a1a] transition shadow-lg hover:shadow-2xl inline-flex items-center gap-2">
+                    <i class="fa-solid fa-pen-ruler"></i> Get Free Estimate
+                </a>
+                <a href="tel:8322245656"
+                    class="bg-white text-[#000000] px-8 py-3.5 rounded-full font-bold hover:bg-gray-100 transition shadow-lg inline-flex items-center gap-2">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    FOOTER (updated links)
+    ============================================================ -->
+    <footer class="bg-[#000000] text-white/70 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                <div>
+                    <a href="index.html" class="flex items-center gap-2 text-white font-bold text-3xl tracking-tight mb-4">
+                        <img src="images/logo.png" style="height:70px; width:auto" alt="TEXCO Construction logo" />
+                    </a>
+                    <p class="text-sm leading-relaxed max-w-xs">
+                        Building Texas with strength, precision, and quality craftsmanship since 2011.
+                    </p>
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-white/40 hover:text-red-500 transition text-xl"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-red-500 transition text-red-400">About Us</a></li>
+                        <li><a href="service-areas.html" class="hover:text-red-500 transition">Service Areas</a></li>
+                        <li><a href="gallery.html" class="hover:text-red-500 transition">Project Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-red-500 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="services/post-frame.html" class="hover:text-red-500 transition">Post-Frame Buildings</a></li>
+                        <li><a href="services/red-iron.html" class="hover:text-red-500 transition">Red Iron Buildings</a></li>
+                        <li><a href="services/fencing.html" class="hover:text-red-500 transition">Fencing Services</a></li>
+                        <li><a href="services/concrete.html" class="hover:text-red-500 transition">Concrete Services</a></li>
+                        <li><a href="services/site-work.html" class="hover:text-red-500 transition">Site Work &amp; Dirt Work</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-4">Get In Touch</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-phone text-red-500 mt-0.5"></i>
+                            <a href="tel:8322245656" class="hover:text-red-500 transition">(832) 224-5656</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope text-red-500 mt-0.5"></i>
+                            <a href="mailto:joe@texcoconstruction.com"
+                                class="hover:text-red-500 transition">joe@texcoconstruction.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-red-500 mt-0.5"></i>
+                            <span>Brazoria County, Texas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-white/40 gap-4">
+                <p>&copy; 2026 TEXCO Construction. All rights reserved.</p>
+                <p>Built for Texas. Built to Last.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+    SCRIPTS
+    ============================================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            offset: 60,
+        });
+
+        // Header scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                header.classList.remove('header-transparent');
+                header.classList.add('header-solid');
+            } else {
+                header.classList.remove('header-solid');
+                header.classList.add('header-transparent');
+            }
+        });
+
+        // Mobile menu
+        const toggleBtn = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        let menuOpen = false;
+
+        toggleBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('open', menuOpen);
+            toggleBtn.innerHTML = menuOpen ?
+                '<i class="fa-solid fa-xmark"></i>' :
+                '<i class="fa-solid fa-bars"></i>';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.remove('open');
+                toggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        // Stats counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'), 10);
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    const current = Math.floor(eased * target);
+                    counter.textContent = current + (target > 100 ? '+' : '%');
+                    if (progress < 1) {
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target + (target > 100 ? '+' : '%');
+                    }
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        const statsSection = document.querySelector('.stat-number')?.closest('section');
+        if (statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(statsSection);
+        }
+
+        console.log('TEXCO Construction — About page loaded.');
+    </script>
+
+</body>
+
+</html>
